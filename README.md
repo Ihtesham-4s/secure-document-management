@@ -22,7 +22,7 @@ This project is a Secure Document Management System (DMS) designed to store, man
 ## Installation
 
 ```bash
-git clone https://github.com/Ihtesham-4s/dms-project.git
+git clone https://github.com/Ihtesham-4s/secure-document-management.git
 cd dms-project
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
