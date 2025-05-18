@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <base href="/">  <!-- Add this line to help resolve relative URLs -->
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">SecureDocs User</a>
+            <ul>
+                <li><a href="#" data-section="upload" class="active">Upload</a></li>
+                <li><a href="#" data-section="documents">Documents</a></li>
+            </ul>
+            <div class="profile-info">
+                <img src="" alt="Profile" id="profileImage">
+                <span id="userName">User Name</span>
+                <div class="dropdown" id="profileDropdown">
+                    <a href="#" id="logoutLink">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="content-container">
+            <!-- Upload Section -->
+            <section id="upload" class="content-section active">
+                <h2>Upload Document</h2>
+                <input type="file" id="documentUpload" name="file" accept=".pdf, .docx" required />
+                <button id="uploadBtn">Upload</button>
+                <div id="uploadStatus"></div>
+            </section>
+
+            <!-- Documents Section -->
+            <section id="documents" class="content-section">
+                <h2>My Documents</h2>
+                <table id="documentsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Upload Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevDocPage">Previous</button>
+                    <span id="currentDocPage">1</span>
+                    <button id="nextDocPage">Next</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" data-section="upload">Upload</a></li>
+                    <li><a href="#" data-section="documents">Documents</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Developer</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> example1122@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +923456789012</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>SecureDocs - Document Management System</p>
+                <p>&copy; <span id="currentYear"></span> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="user_dashboard.js"></script>
+</body>
+
+</html>

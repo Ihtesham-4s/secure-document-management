@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>SecureDocs</h1>
+            <p>Secure your documents confidently</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="register-box">
+            <h2>Create an Account</h2>
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" placeholder="Enter your work email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="register-button">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="index.html" id="login-link">Log In</a></p>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <base href="/">  <!-- Add this line to help resolve relative URLs -->
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">SecureDocs Admin</a>
+            <ul>
+                <li><a href="#" data-section="dashboard" class="active">Dashboard</a></li>
+                <li><a href="#" data-section="upload">Upload</a></li>
+                <li><a href="#" data-section="documents">Documents</a></li>
+                <li><a href="#" data-section="users">Users</a></li>
+                <li><a href="#" data-section="logs">Logs</a></li>
+            </ul>
+            <div class="profile-info">
+                <img src="" alt="Profile" id="profileImage">
+                <span id="adminName">Admin Name</span>
+                <div class="dropdown" id="profileDropdown">
+                    <a href="#" id="logoutLink">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="content-container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2>Dashboard Overview</h2>
+                <div class="summary-cards">
+                    <div class="card" id="totalDocumentsCard">
+                        <h3>Total Documents</h3>
+                        <span class="card-value">0</span>
+                    </div>
+                    <div class="card" id="totalUsersCard">
+                        <h3>Total Users</h3>
+                        <span class="card-value">0</span>
+                    </div>
+                    <div class="card" id="recentActivityCard">
+                        <h3>Recent Activity</h3>
+                        <ul id="recentActivityList"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section id="upload" class="content-section">
+                <h2>Upload Document</h2>
+                <input type="file" id="documentUpload" name="file" accept=".pdf, .docx" required />
+                <button id="uploadBtn">Upload</button>
+                <div id="uploadStatus"></div>
+            </section>
+
+            <!-- Documents Section -->
+            <section id="documents" class="content-section">
+                <h2>All Documents</h2>
+                <table id="documentsTable">
+                    <thead>
+                        <tr>
+                            <th data-sort="id">ID</th>
+                            <th data-sort="name">Name</th>
+                            <th data-sort="upload_date">Upload Date</th>
+                            <th data-sort="user_id">Uploaded By</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevDocPage">Previous</button>
+                    <span id="currentDocPage">1</span>
+                    <button id="nextDocPage">Next</button>
+                </div>
+            </section>
+
+            <!-- Users Section -->
+            <section id="users" class="content-section">
+                <h2>Manage Users</h2>
+                <input type="text" id="userSearch" placeholder="Search users...">
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevPage">Previous</button>
+                    <span id="currentPage">1</span>
+                    <button id="nextPage">Next</button>
+                </div>
+            </section>
+                
+            <!-- Logs Section -->
+            <section id="logs" class="content-section">
+                <h2>Activity Logs</h2>
+                <div class="log-filters">
+                    <input type="text" id="logSearch" placeholder="Search logs...">
+                    <select id="logTypeFilter">
+                        <option value="">All Activities</option>
+                        <option value="user management">User Management</option>
+                        <option value="document management">Document Management</option>
+                        <option value="login activity">Login Activity</option>
+                    </select>
+                </div>
+                <table id="logsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User ID</th>
+                            <th>Action</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="pagination">
+                    <button id="prevLogPage">Previous</button>
+                    <span id="currentLogPage">1</span>
+                    <button id="nextLogPage">Next</button>
+                </div>
+                <button id="getLogsBtn">Get Activity Logs</button>
+            </section>
+        </div>
+
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#" data-section="dashboard">Dashboard</a></li>
+                    <li><a href="#" data-section="documents">Documents</a></li>
+                    <li><a href="#" data-section="users">Users</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Developer</h4>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> example1122@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> +923456789012</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <p>SecureDocs - Document Management System</p>
+                <p>&copy; <span id="currentYear"></span> All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="admin_dashboard.js"></script>
+   
+</body>
+
+</html>
